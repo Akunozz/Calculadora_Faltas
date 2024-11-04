@@ -18,7 +18,7 @@ function calcularFaltas() {
     if (faltasRestantes > 0) {
         resultado.textContent = `Você ainda pode faltar ${faltasRestantes} horas.`;
         const aulasPossiveis = calcularAulasRestantes(cargaHoraria, faltasRestantes);
-        aulasRestantes.textContent = `Isso equivale a ${aulasPossiveis} aulas que você ainda pode faltar.`;
+        aulasRestantes.textContent = `Isso equivale a aproxidamente ${aulasPossiveis} aulas que você ainda pode faltar.`;
     } else {
         resultado.textContent = "Você já excedeu o limite de faltas permitido.";
         aulasRestantes.textContent = "";
