@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Faltas</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Calculadora de Faltas</h1>
@@ -26,8 +28,43 @@
             <label for="cargaHorariaCustom">Carga horária personalizada (selecione o campo "outro" acima):</label>
             <input type="number" id="cargaHorariaCustom" min="1" placeholder="Ex: 56 horas" disabled>
 
-            <label for="horasFaltadas">Informe as horas que você já faltou:</label>
-            <input type="number" id="horasFaltadas" min="0" required>
+
+            <label for="horasFaltadas">Selecione as horas que você já faltou:</label>
+            <select id="horasFaltadas" required>
+                <option value="" disabled selected>Escolha uma opção</option>
+                <option value="1">1 hora</option>
+                <option value="2">2 horas</option>
+                <option value="3">3 horas</option>
+                <option value="4">4 horas</option>
+                <option value="5">5 horas</option>
+                <option value="6">6 horas</option>
+                <option value="7">7 horas</option>
+                <option value="8">8 horas</option>
+                <option value="9">9 horas</option>
+                <option value="10">10 horas</option>
+                <option value="11">11 horas</option>
+                <option value="12">12 horas</option>
+                <option value="13">13 horas</option>
+                <option value="14">14 horas</option>
+                <option value="15">15 horas</option>
+                <option value="16">16 horas</option>
+                <option value="17">17 horas</option>
+                <option value="18">18 horas</option>
+                <option value="19">19 horas</option>
+                <option value="20">20 horas</option>
+                <option value="21">21 horas</option>
+                <option value="22">22 horas</option>
+                <option value="23">23 horas</option>
+                <option value="24">24 horas</option>
+                <option value="25">25 horas</option>
+                <option value="26">26 horas</option>
+                <option value="27">27 horas</option>
+                <option value="28">28 horas</option>
+                <option value="29">29 horas</option>
+                <option value="30">30 horas</option>
+                <option value="31">31 horas</option>
+                <option value="32">32 horas</option>
+            </select>
 
             <button type="button" id="confirmar">Confirmar</button>
         </form>
@@ -40,4 +77,5 @@
     </footer>
     <script src="main.js"></script>
 </body>
+
 </html>
