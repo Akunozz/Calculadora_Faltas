@@ -58,6 +58,10 @@ p#resultado {
     font-weight: bold;
 }
 
+p#aulasRestantes{
+    text-align: center;
+}
+
 footer {
     width: 100%;
     text-align: center;
