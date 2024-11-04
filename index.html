@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Faltas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Faltas</h1>
+        <form id="faltaForm">
+            <label for="cargaHoraria">Selecione a carga horária da disciplina:</label>
+            <select id="cargaHoraria" required>
+                <option value="" disabled selected>Escolha uma opção</option>
+                <option value="15">15 horas</option>
+                <option value="30">30 horas</option>
+                <option value="45">45 horas</option>
+                <option value="60">60 horas</option>
+                <option value="75">75 horas</option>
+                <option value="90">90 horas</option>
+                <option value="120">120 horas</option>
+            </select>
+
+            <label for="horasFaltadas">Informe as horas que você já faltou:</label>
+            <input type="number" id="horasFaltadas" min="0" required>
+
+            <button type="button" id="confirmar">Confirmar</button>
+        </form>
+        <p id="resultado"></p>
+        <p id="aulasRestantes"></p>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
