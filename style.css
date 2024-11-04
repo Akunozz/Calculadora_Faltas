@@ -57,3 +57,16 @@ p#resultado {
     text-align: center;
     font-weight: bold;
 }
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 0.9em;
+    color: #777;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #f9f9f9;
+}
