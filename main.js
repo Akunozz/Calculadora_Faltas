@@ -73,6 +73,9 @@ function calcularAulasRestantes(cargaHoraria, faltasRestantes) {
         case 90:
             horasPorAula = 3;
             break;
+        case 120:
+            horasPorAula = 4;
+            break;
         default:
             horasPorAula = 1;
     }
