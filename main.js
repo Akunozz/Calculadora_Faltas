@@ -37,7 +37,7 @@ function calcularFaltas() {
     const limiteFaltas = cargaHoraria * 0.25;
     const faltasRestantes = limiteFaltas - horasFaltadas;
 
-    if (faltasRestantes > 0) {
+    if (faltasRestantes >= 0) {
         resultado.textContent = `Você ainda pode faltar ${faltasRestantes} horas.`;
         if (cargaHorariaSelect.value !== "custom") {
             const aulasPossiveis = calcularAulasRestantes(cargaHoraria, faltasRestantes);
