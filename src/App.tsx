@@ -106,7 +106,7 @@ function App() {
         // horasPorAula pode ser null (no caso de 120)
         if (horasPorAula) {
           const aulas = Math.floor(faltasRestantes / horasPorAula);
-          setResultadoAulas(`Isso equivale a ${aulas} aulas que você ainda pode faltar.`);
+          setResultadoAulas(`Isso equivale a aproxidamente ${aulas} aulas que você ainda pode faltar.`);
         } else {
           setResultadoAulas("");
         }
@@ -121,7 +121,7 @@ function App() {
   return (
     <div className="min-h-screen bg-black flex flex-col items-center py-10 px-4">
       <div className="w-full max-w-md bg-white rounded-3xl shadow-md p-6 mb-10">
-        <h1 className="text-2xl font-bold text-center mb-6">Calculadora de Faltas</h1>
+        <h1 className="text-2xl font-bold text-center mb-10">Calculadora de Faltas</h1>
         
         <form className="flex flex-col space-y-4" onSubmit={(e) => e.preventDefault()}>
           {/* Seletor de carga horária */}
@@ -158,7 +158,7 @@ function App() {
               type="number"
               min={1}
               className={`block w-full mt-2 p-2 border border-gray-700 rounded-2xl
-                ${disciplina === "custom" ? "" : "bg-gray-100 cursor-not-allowed"}`}
+                ${disciplina === "custom" ? "" : "bg-gray-200 cursor-not-allowed"}`}
               placeholder="Ex: 100 horas"
               disabled={disciplina !== "custom"}
               value={cargaHorariaCustom}
@@ -192,7 +192,7 @@ function App() {
           {/* Botão confirmar */}
           <button
             type="button"
-            className="bg-blue-600 text-white font-bold py-2 px-4 rounded-2xl hover:bg-blue-800"
+            className="bg-blue-500 text-white font-bold py-2 px-4 rounded-2xl"
             onClick={handleConfirmar}
           >
             Confirmar
