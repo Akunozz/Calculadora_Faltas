@@ -1,7 +1,7 @@
 import FormularioFaltas from "./components/Formulario/formulario";
 import imagem from "./assets/imagem.jpg";
 import { Toaster } from "./components/ui/sonner"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
   return (
