@@ -110,89 +110,91 @@ function FormularioFaltas() {
       setResultadoAulas("")
       setExcedeuFaltas(true)
       toast.error("Se fodeu com sucesso!")
-      
+
     }
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex justify-center text-2xl font-bold p-2">
-          Calculadora de Faltas
-        </CardTitle>
-        <CardDescription className="flex justify-center p-2">
-          Insira a carga horária da disciplina e as faltas.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit(calcularFaltas)} className="space-y-6">
-          {/* Seleção da Carga Horária */}
-          <div>
-            <Label htmlFor="cargaHoraria">Carga Horária:</Label>
-            <Controller
-              control={control}
-              name="cargaHoraria"
-              render={({ field }) => (
-                <Select onValueChange={field.onChange}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Selecione a carga horária" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {cargaHorariaOptions.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+    <>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex justify-center text-2xl font-bold p-2">
+            Calculadora de Faltas
+          </CardTitle>
+          <CardDescription className="flex justify-center p-2">
+            Insira a carga horária da disciplina e as faltas.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit(calcularFaltas)} className="space-y-6">
+            {/* Seleção da Carga Horária */}
+            <div>
+              <Label htmlFor="cargaHoraria">Carga Horária:</Label>
+              <Controller
+                control={control}
+                name="cargaHoraria"
+                render={({ field }) => (
+                  <Select onValueChange={field.onChange}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Selecione a carga horária" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {cargaHorariaOptions.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                )}
+              />
+              {errors.cargaHoraria && (
+                <p className="text-red-500 text-sm mt-1">{errors.cargaHoraria?.message?.toString()}</p>
               )}
-            />
-            {errors.cargaHoraria && (
-              <p className="text-red-500 text-sm mt-1">{errors.cargaHoraria?.message?.toString()}</p>
-            )}
-          </div>
+            </div>
 
-          {/* Seleção das Horas Faltadas */}
-          <div>
-            <Label htmlFor="horasFaltadas">Horas faltadas:</Label>
-            <Controller
-              control={control}
-              name="horasFaltadas"
-              render={({ field }) => (
-                <Select onValueChange={field.onChange}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Selecione as horas faltadas" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {horasFaltadasOptions.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+            {/* Seleção das Horas Faltadas */}
+            <div>
+              <Label htmlFor="horasFaltadas">Horas faltadas:</Label>
+              <Controller
+                control={control}
+                name="horasFaltadas"
+                render={({ field }) => (
+                  <Select onValueChange={field.onChange}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Selecione as horas faltadas" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {horasFaltadasOptions.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                )}
+              />
+              {errors.horasFaltadas && (
+                <p className="text-red-500 text-sm mt-1">{errors.horasFaltadas?.message?.toString()}</p>
               )}
-            />
-            {errors.horasFaltadas && (
-              <p className="text-red-500 text-sm mt-1">{errors.horasFaltadas?.message?.toString()}</p>
-            )}
-          </div>
+            </div>
 
-          {/* Botão de Cálculo */}
-          <Button type="submit" className="w-full rounded-lg">
-            Calcular
-          </Button>
-        </form>
-      </CardContent>
+            {/* Botão de Cálculo */}
+            <Button type="submit" className="w-full rounded-lg">
+              Calcular
+            </Button>
+          </form>
+        </CardContent>
 
-      <CardFooter className="flex flex-col items-center space-y-4">
-        <p className={`text-sm ${excedeuFaltas ? "text-red-500 font-bold" : "text-green-500 font-medium"}`}>
-          {resultadoHoras}
-        </p>
-        <p className="text-sm">{resultadoAulas} </p>
-        <p className="text-sm text-gray-500">Criado por Breno Rosa</p>
-      </CardFooter>
-    </Card>
+        <CardFooter className="flex flex-col items-center space-y-2">
+          <p className={`text-sm ${excedeuFaltas ? "text-red-500 font-bold" : "text-green-500 font-medium"}`}>
+            {resultadoHoras}
+          </p>
+          <p className="text-sm">{resultadoAulas} </p>
+        </CardFooter>
+        <a href="https://www.linkedin.com/in/breno-rosa/" className="flex justify-center text-sm text-gray-500">Criado por Breno Rosa</a>
+      </Card>
+    </>
   );
 }
 
